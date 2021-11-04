@@ -1,0 +1,10 @@
+#app{
+	background-attachment: fixed !important;
+	background-image: url("/background.png") !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+}
+
+.top-card{
+	opacity: 1.0;
+}

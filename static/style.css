@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;500;700&display=swap');
+
+#app *{
+	font-family: 'Urbanist', sans-serif!important;
+}
+
+.v-card{
+	/* opacity: 25%; */
+}
+
+.centering{
+	text-align: center;
+}
+
+.g-Red{
+	color: #FF0000 !important;
+}
+.g-Green{
+	color: #00FF00 !important;
+}
+.g-Blue{
+	color: #0000FF !important;
+}
