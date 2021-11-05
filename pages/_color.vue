@@ -3,11 +3,11 @@
     <v-col cols="9" md="8" lg="6">
       <v-card class="ma-4">
         <v-row>
-          <v-col cols="12" md="6">
-            <v-card-text class="pt-0 pb-0 text-h4 text-center text-md-left">Color</v-card-text>
+          <v-col v-if="$vuetify.breakpoint.name!=='xs'" cols="12" sm="6">
+            <v-card-text class="pt-0 pb-0 text-h4 text-center text-sm-left">Color</v-card-text>
           </v-col>
-          <v-col cols="12" md="6">
-            <v-card-text class="pt-0 pb-0 text-h4 text-center text-md-right"> #{{color}}</v-card-text>
+          <v-col cols="12" sm="6">
+            <v-card-text class="pt-0 pb-0 text-h4 text-center text-sm-right"> #{{color}}</v-card-text>
           </v-col>
         </v-row>
         <v-row class="ml-2 mr-2 mt-0">
