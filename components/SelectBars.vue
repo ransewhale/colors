@@ -4,7 +4,7 @@
       v-for="(item, index) in sliderItems"
       :key="index" class="mb-0 mt-0">
       <v-col cols="2" md="1" class="mb-0 mt-0 mr-0 pr-0 pb-0 pt-0">
-        <v-card-text :style="'color: '+item.color+';'" class="text-center text-h6 ma-0 pl-0 pr-0 pt-2 pb-0">{{item.label.substring(0,1)}}</v-card-text>
+        <v-card-text :style="'color: '+item.color+';'" class="text-center text-h6 ma-0 pl-0 pr-0 pt-2 pb-0">{{item.name.substring(0,1)}}</v-card-text>
       </v-col>
       <v-col cols="10" md="11" class="mb-0 mt-0 ml-0 pl-0 pb-0 pt-0">
         <v-slider

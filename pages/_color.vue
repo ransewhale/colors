@@ -10,24 +10,7 @@
             <v-card-text class="pt-0 pb-0 text-h4 text-center text-sm-right"> #{{color}}</v-card-text>
           </v-col>
         </v-row>
-        <v-row class="ml-2 mr-2 mt-0">
-          <v-col
-            v-for="(item, index) in items"
-            :key="index" 
-            cols="12" md="4" class="ma-0">
-            <v-card-text :class="item.color+'--text pb-0 pt-0 text-center text-h6'">{{item.name}}</v-card-text>
-            <v-card flat class="d-flex justify-center">
-              <v-progress-circular
-                :rotate="-90"
-                :value="item.percent"
-                :size="150"
-                :width="25"
-                :color="item.color">
-                <v-card-text  class="ma-0 pa-0 text-h4"> {{item.value}} </v-card-text>
-              </v-progress-circular>
-            </v-card>
-          </v-col>
-        </v-row>
+        <ColorCharts :items="items" />
         <SelectBars :sliderItems="sliderItems" :ButtonToTop="true" />
       </v-card>
     </v-col>
@@ -102,7 +85,7 @@ export default {
     }catch(e){
       error({ statusCode: 404, message: 'Not Found' });
     }
-    const vals = [
+    const sliderItems = [
       {
         value: r,
         name: 'Red',
@@ -119,22 +102,17 @@ export default {
         color: 'blue'
       }
     ];
-    const items = vals.map(x => ({name: x.name, color: x.color, value: x.value, percent: 0}));
-    const sliderItems = [
-        { label: 'Red', value: r, color: 'red' },
-        { label: 'Green', value: g, color: 'green' },
-        { label: 'Blue', value: b, color: 'blue' }
-      ];
-    return {items,color,sliderItems};
-  },
-  mounted(){
-    this.items = this.items.map(x => ({name: x.name, color: x.color, value: x.value, percent: x.value*100/255}));
+    const items = sliderItems.map(x => ({name: x.name, color: x.color, value: x.value, percent: 0}));
+    return {items,sliderItems,color};
   },
   head(){
     return {
       title: '#'+this.color,
       link: [{ rel: 'stylesheet', type: 'text/css', href: 'https://api.andirnu.ml/colors/bg.php?id='+this.color}]
     }
+  },
+  mounted(){
+    this.items = this.items.map(x => ({name: x.name, color: x.color, value: x.value, percent: x.value*100/255}));
   }
 }
 

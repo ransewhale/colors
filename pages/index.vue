@@ -23,9 +23,9 @@ export default {
     const b = Math.floor(Math.random()*255);
     const g = Math.floor(Math.random()*255);
     const sliderItems = [
-        { label: 'Red', value: r, color: 'red' },
-        { label: 'Green', value: g, color: 'green' },
-        { label: 'Blue', value: b, color: 'blue' }
+        { name: 'Red', value: r, color: 'red' },
+        { name: 'Green', value: g, color: 'green' },
+        { name: 'Blue', value: b, color: 'blue' }
       ];
     return {sliderItems};
   }
